@@ -3982,6 +3982,27 @@
 </ul>
 </li>
 </ul>
+<p>Also:</p>
+<ul>
+<li>To upgrade from <code>cert-manager-1-16-4</code> to <code>cert-manager-v1-16-4</code>
+    please apply this patch to management cluster:
+    <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">apiVersion: k0rdent.mirantis.com/v1beta1</span>
+<span class="s">kind: ServiceTemplateChain</span>
+<span class="s">metadata:</span>
+<span class="s">  name: patch-cert-manager-v1-16-4-from-1-16-4</span>
+<span class="s">  namespace: kcm-system</span>
+<span class="s">  annotations:</span>
+<span class="s">    helm.sh/resource-policy: keep</span>
+<span class="s">spec:</span>
+<span class="s">  supportedTemplates:</span>
+<span class="s">    - name: cert-manager-v1-16-4</span>
+<span class="s">    - name: cert-manager-1-16-4</span>
+<span class="s">      availableUpgrades:</span>
+<span class="s">        - name: cert-manager-v1-16-4</span>
+<span class="s">EOF</span>
+</code></pre></div></li>
+</ul>
 <h2 id="upgrade-to-v110">Upgrade to v1.1.0<a class="headerlink" href="#upgrade-to-v110" title="Permanent link">#</a></h2>
 <ul>
 <li>After you <code>helm upgrade</code> the <code>kof-mothership</code> chart, please run the following:

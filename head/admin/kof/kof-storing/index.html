@@ -4083,7 +4083,9 @@ No additional steps are required here.</p>
 </li>
 <li>
 <p>Create the <code>collectors-values.yaml</code> file:
-    <div class="highlight"><pre><span></span><code><span class="nt">opentelemetry-kube-stack</span><span class="p">:</span>
+    <div class="highlight"><pre><span></span><code><span class="nt">kcm</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">monitoring</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">opentelemetry-kube-stack</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">clusterName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mothership</span>
 <span class="w">  </span><span class="nt">defaultCRConfig</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">config</span><span class="p">:</span>
@@ -4127,6 +4129,8 @@ helm<span class="w"> </span>upgrade<span class="w"> </span>-i<span class="w"> </
 <li>
 <p>Create the <code>collectors-values.yaml</code> file:
     <div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;collectors-values.yaml<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">kcm:</span>
+<span class="s">  monitoring: true</span>
 <span class="s">opentelemetry-kube-stack:</span>
 <span class="s">  clusterName: mothership</span>
 <span class="s">  defaultCRConfig:</span>
@@ -4223,6 +4227,8 @@ helm<span class="w"> </span>upgrade<span class="w"> </span>-i<span class="w"> </
 <li>
 <p>Create the <code>collectors-values.yaml</code> file:
     <div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;collectors-values.yaml<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">kcm:</span>
+<span class="s">  monitoring: true</span>
 <span class="s">kof:</span>
 <span class="s">  basic_auth: false</span>
 <span class="s">opentelemetry-kube-stack:</span>
@@ -4291,6 +4297,8 @@ AWS_SECRET_ACCESS_KEY=REDACTED
 <li>
 <p>Create the <code>collectors-values.yaml</code> file:
     <div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;collectors-values.yaml<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">kcm:</span>
+<span class="s">  monitoring: true</span>
 <span class="s">opentelemetry-kube-stack:</span>
 <span class="s">  clusterName: mothership</span>
 <span class="s">  defaultCRConfig:</span>
